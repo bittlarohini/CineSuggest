@@ -1,0 +1,387 @@
+/* =========================
+   Reset & Base
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7ff, #eef1ff);
+    color: #1f2937;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 24px;
+}
+
+/* =========================
+   Header (Gradient)
+========================= */
+.header {
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899,
+        #4f46e5
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    color: white;
+    padding: 42px 30px;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo i {
+    font-size: 2.6rem;
+}
+
+.logo h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+.tagline {
+    margin-top: 12px;
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
+
+/* =========================
+   Main Card
+========================= */
+.main-content {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Mood Section
+========================= */
+.mood-section h2 {
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #4f46e5, #ec4899);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.search-box {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#moodInput {
+    flex: 1;
+    padding: 16px 18px;
+    font-size: 1rem;
+    border-radius: 14px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+#moodInput:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18);
+}
+
+/* =========================
+   Primary Button
+========================= */
+.btn-primary {
+    padding: 16px 30px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(99, 102, 241, 0.4);
+}
+
+/* =========================
+   Popular Moods
+========================= */
+.popular-moods {
+    margin-top: 30px;
+}
+
+.popular-moods p {
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #374151;
+}
+
+.mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mood-btn {
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+    color: #5b21b6;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.mood-btn:hover {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   Random Button
+========================= */
+.random-section {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.btn-random {
+    padding: 16px 42px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ec4899, #ef4444);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-random:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(236, 72, 153, 0.45);
+}
+
+/* =========================
+   Results Section
+========================= */
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.results-header h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.btn-secondary {
+    padding: 12px 22px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    background: white;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background: #f4f5ff;
+}
+
+/* =========================
+   Mood Indicator
+========================= */
+.mood-indicator {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+    padding: 14px 22px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+#currentMood {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: capitalize;
+}
+
+#movieCount {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   Movie Cards
+========================= */
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 18px;
+}
+
+.movie-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.movie-year {
+    color: #6366f1;
+    font-weight: 500;
+}
+
+.movie-detail {
+    font-size: 0.95rem;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #374151;
+}
+
+.movie-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.genre-tag {
+    background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+    color: #5b21b6;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
+/* =========================
+   Loading
+========================= */
+.loading {
+    text-align: center;
+    padding: 50px;
+}
+
+.spinner {
+    width: 55px;
+    height: 55px;
+    border: 5px solid #e5e7eb;
+    border-top: 5px solid #8b5cf6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px;
+    color: #6b7280;
+}
+
+.footer i {
+    color: #ec4899;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-random {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .movies-container {
+        grid-template-columns: 1fr;
+    }
+}

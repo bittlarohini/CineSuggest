@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSuggest</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <h1>CineSuggest</h1>
+            </div>
+            <p class="tagline">Find the perfect movie for your mood!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mood Selection Section -->
+            <section class="mood-section">
+                <h2><i class="fas fa-smile"></i> How are you feeling today?</h2>
+                
+                <div class="search-box">
+                    <input type="text" id="moodInput" placeholder="Type your mood (e.g., happy, sad, romantic...)">
+                    <button id="searchBtn" class="btn-primary">
+                        <i class="fas fa-search"></i> Find Movies
+                    </button>
+                </div>
+
+                <div class="popular-moods">
+                    <p>Or choose from popular moods:</p>
+                    <div class="mood-buttons" id="moodButtons">
+                        <!-- Mood buttons will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="random-section">
+                    <button id="randomBtn" class="btn-random">
+                        <i class="fas fa-random"></i> Surprise Me! (Random Movie)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2 id="resultsTitle">Movie Recommendations</h2>
+                    <button id="backBtn" class="btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Moods
+                    </button>
+                </div>
+                
+                <div class="mood-indicator">
+                    <span id="currentMood">Mood</span>
+                    <span id="movieCount">0 movies</span>
+                </div>
+
+                <div class="movies-container" id="moviesContainer">
+                    <!-- Movies will be displayed here -->
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fas fa-film fa-3x"></i>
+                    <h3>No movies found for this mood</h3>
+                    <p>Try a different mood or click "Surprise Me!" for a random movie.</p>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div class="loading" id="loadingSpinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Finding perfect movies for you...</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart"></i> by Movie Lovers</p>
+            <p class="info">Using your personalized mood-based recommendation system</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="static/script.js"></script>
+</body>
+</html>

@@ -1,161 +1,116 @@
-from flask import Flask, render_template, jsonify, request
-from flask_cors import CORS
+"""
+Mood Movie Recommender - Flask Web Application
+Run with: python app.py
+"""
+
+from flask import Flask, render_template, request, jsonify
 import json
+import os
 import random
-import time
 
 app = Flask(__name__)
-CORS(app)
 
 # Load movie data
-def load_movie_data():
+def load_movies():
     try:
         with open('movies_data.json', 'r', encoding='utf-8') as f:
             return json.load(f)
-    except FileNotFoundError:
+    except Exception as e:
+        print(f"Error loading movies: {e}")
         return {}
 
-# Fun quotes for different moods
-MOOD_QUOTES = {
-    "happy": [
-        "🎬 Feeling happy? These movies will double your joy!",
-        "😄 Smile more! Here are movies to keep that grin going!",
-        "🌟 Happiness is watching a great movie with popcorn!",
-        "🎉 Let's celebrate your good mood with awesome movies!",
-        "✨ Happy mood + Good movie = Perfect day!"
-    ],
-    "sad": [
-        "🍿 These movies understand your feelings... and popcorn helps too!",
-        "😢 Sad moments make movies more meaningful. Here are some gems!",
-        "🌈 Every cloud has a silver lining... and these movies have great stories!",
-        "🎬 Even sad stories can make you feel better. Trust us!",
-        "💫 Sad today, smiling tomorrow - start with these movies!"
-    ],
-    "romantic": [
-        "❤️ Love is in the air... and on your screen!",
-        "💑 Get ready for some heart-fluttering moments!",
-        "🌹 Romance + Movies = Perfect Combination!",
-        "💕 These movies will make you believe in love again!",
-        "💘 Love stories that will make your heart skip a beat!"
-    ],
-    "angry": [
-        "🔥 Let off steam with these high-energy movies!",
-        "💪 Transform anger into action movie excitement!",
-        "🎬 These movies pack more punch than your anger!",
-        "⚡ Channel that energy into movie marathon mode!",
-        "💥 Action-packed movies to match your fiery mood!"
-    ],
-    "relaxed": [
-        "😌 Perfect movies for your chill mood!",
-        "🍃 Sit back, relax, and enjoy these calming stories",
-        "🌅 These movies are as soothing as a sunset!",
-        "🎬 Relaxation mode activated with these films!",
-        "🧘‍♀️ Chill vibes and great movies - perfect combo!"
-    ],
-    "excited": [
-        "🎉 Get ready for an adrenaline rush!",
-        "🚀 Excited? These movies will launch your excitement to space!",
-        "⚡ High-voltage entertainment coming your way!",
-        "🎬 Buckle up for an exciting movie ride!",
-        "🏎️ Fasten your seatbelt for thrill-a-minute movies!"
-    ],
-    "motivational": [
-        "💪 Get inspired! These movies will fuel your motivation!",
-        "🌟 Dream big! These stories will push you forward!",
-        "🚀 Ready to conquer the world? Start with these movies!",
-        "🎬 Get your dose of inspiration right here!",
-        "🔥 Movies that will light a fire in your soul!"
-    ],
-    "adventurous": [
-        "🗺️ Adventure awaits in every frame!",
-        "🌍 Explore new worlds without leaving your couch!",
-        "🎬 Get ready for the adventure of a lifetime!",
-        "⚔️ Sword-fighting, treasure hunting, and more!",
-        "🏔️ Adventure calls! Answer with these movies!"
-    ]
-}
-
-# Funny quotes for random display
-FUNNY_QUOTES = [
-    "🎬 Movies: Because staring at walls is so 1990s!",
-    "🍿 Popcorn + Movie = Life solved!",
-    "😴 Who needs sleep when you have movies?",
-    "🤔 Can't decide what to watch? That's why we're here!",
-    "🎥 One movie a day keeps boredom away!",
-    "💫 Your next favorite movie is just a click away!",
-    "🌟 Movie magic at your fingertips!",
-    "🤣 Laughter guaranteed or your popcorn back!",
-    "🧠 Smart people watch good movies. You're smart!",
-    "🎉 Every mood deserves a movie match!"
-]
+# Global variables
+MOVIES = load_movies()
+MOODS = list(MOVIES.keys())
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    """Home page"""
+    return render_template('index.html', moods=MOODS)
 
 @app.route('/api/moods')
 def get_moods():
-    data = load_movie_data()
-    moods = list(data.keys())
-    return jsonify({"moods": moods})
-
-@app.route('/api/movies/<mood>')
-def get_movies_by_mood(mood):
-    time.sleep(0.5)  # Simulate loading for better UX
-    data = load_movie_data()
-    movies = data.get(mood.lower(), [])
-    quote = random.choice(MOOD_QUOTES.get(mood.lower(), ["Great movies for your mood!"]))
-    
+    """API: Get all available moods"""
     return jsonify({
-        "mood": mood,
-        "movies": movies,
-        "count": len(movies),
-        "quote": quote
+        'success': True,
+        'moods': MOODS,
+        'count': len(MOODS)
     })
 
-@app.route('/api/all-movies')
-def get_all_movies():
-    data = load_movie_data()
-    all_movies = []
-    for mood, movies in data.items():
-        for movie in movies:
-            movie['mood'] = mood
-            all_movies.append(movie)
-    
-    # Add some random delay for realistic loading
-    time.sleep(0.3)
-    return jsonify({"movies": all_movies})
+@app.route('/api/recommend', methods=['POST'])
+def recommend():
+    """API: Get movie recommendations"""
+    try:
+        data = request.get_json()
+        mood = data.get('mood', '').lower().strip()
+        
+        if not mood:
+            return jsonify({
+                'success': False,
+                'error': 'Please provide a mood'
+            }), 400
+        
+        # Handle random mood
+        if mood == 'random':
+            random_mood = random.choice(MOODS)
+            movies = MOVIES.get(random_mood, [])
+            if movies:
+                random_movie = random.choice(movies)
+                return jsonify({
+                    'success': True,
+                    'mood': random_mood,
+                    'movies': [random_movie],
+                    'count': 1,
+                    'is_random': True
+                })
+        
+        # Check if mood exists
+        if mood not in MOVIES:
+            # Try to find similar mood
+            similar = [m for m in MOODS if mood in m or m in mood]
+            if similar:
+                mood = similar[0]
+            else:
+                return jsonify({
+                    'success': False,
+                    'error': f'Mood "{mood}" not found',
+                    'available_moods': MOODS
+                }), 404
+        
+        # Get movies for the mood
+        movies = MOVIES.get(mood, [])
+        return jsonify({
+            'success': True,
+            'mood': mood,
+            'movies': movies,
+            'count': len(movies),
+            'is_random': False
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
 
-@app.route('/api/search')
-def search_movies():
-    query = request.args.get('q', '').lower()
-    data = load_movie_data()
-    results = []
-    
-    for mood, movies in data.items():
-        for movie in movies:
-            if (query in movie['title'].lower() or 
-                query in ' '.join(movie['genre']).lower() or
-                query in movie['language'].lower()):
-                movie['mood'] = mood
-                results.append(movie)
-    
-    quotes = [
-        f"Found {len(results)} gems for '{query}'!",
-        f"Your search '{query}' revealed {len(results)} treasures!",
-        f"Discover {len(results)} amazing movies for '{query}'!",
-        f"Voila! {len(results)} perfect matches for '{query}'!"
-    ] if results else ["No movies found. Try another search!", "Oops! No matches found. Try different keywords!"]
-    
+# Create a simple test route
+@app.route('/test')
+def test():
     return jsonify({
-        "results": results,
-        "count": len(results),
-        "quote": random.choice(quotes)
+        'message': 'API is working!',
+        'available_moods': MOODS,
+        'total_moods': len(MOODS)
     })
-
-@app.route('/api/funny-quote')
-def get_funny_quote():
-    return jsonify({"quote": random.choice(FUNNY_QUOTES)})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Create templates folder if it doesn't exist
+    if not os.path.exists('templates'):
+        os.makedirs('templates')
+    
+    # Create static folder if it doesn't exist
+    if not os.path.exists('static'):
+        os.makedirs('static')
+    
+    # Run the app
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
