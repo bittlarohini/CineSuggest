@@ -1,0 +1,71 @@
+{
+  "happy": [
+    {"title": "Jersey", "year": 2019, "language": "Telugu", "genre": ["Sports", "Drama"], "poster": "https://i.pinimg.com/1200x/51/90/75/519075e8c7e27c5a66f69ae8dad46e63.jpg"},
+    {"title": "Oh My Friend", "year": 2011, "language": "Telugu", "genre": ["Friendship", "Drama"], "poster": "https://resizing.flixster.com/gIMogh1p3l5aGUu3q6JWsbGG1qg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8934365_k_h11_aa.jpg"},
+    {"title": "3 Idiots", "year": 2009, "language": "Hindi", "genre": ["Comedy", "Drama"], "poster": "https://www.insideboxoffice.com/wp-content/uploads/2025/07/3-idiots-feature-1.jpg"},
+    {"title": "F2: Fun and Frustration", "year": 2019, "language": "Telugu", "genre": ["Comedy", "Family"], "poster": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/f2-et00073063-26-03-2018-12-15-44.jpg"},
+    {"title": "Chennai Express", "year": 2013, "language": "Hindi", "genre": ["Comedy", "Action"], "poster": "https://i.pinimg.com/1200x/92/8f/31/928f3110597c334e465a1a56f5f48e11.jpg"},
+    {"title": "Jab We Met", "year": 2007, "language": "Hindi", "genre": ["Romance", "Comedy"], "poster": "https://i.pinimg.com/1200x/63/20/25/632025aee5dc6daaa8118a5684d42279.jpg"},
+    {"title": "Ala Vaikunthapurramuloo", "year": 2020, "language": "Telugu", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/736x/3d/a0/35/3da035cd0cea664dd60a1eb752871680.jpg"}
+  ],
+  
+  "sad": [
+    {"title": "Sita Ramam", "year": 2022, "language": "Telugu", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/47/cd/1d/47cd1de986c6c9bfc4e7e087041f253e.jpg"},
+    {"title": "Kal Ho Naa Ho", "year": 2003, "language": "Hindi", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/41/58/a5/4158a5359102f8a2217bd80ec5f5266b.jpg"},
+    {"title": "Dear Zindagi", "year": 2016, "language": "Hindi", "genre": ["Drama", "Romance"], "poster": "https://i.pinimg.com/736x/a3/02/3a/a3023ad545a4443bb7ddb83f1fbb3e9f.jpg"},
+    {"title": "96", "year": 2018, "language": "Tamil", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/80/51/95/80519507eed878bfe2711eba2fd90279.jpg"},
+    {"title": "Taare Zameen Par", "year": 2007, "language": "Hindi", "genre": ["Drama", "Family"], "poster": "https://i.pinimg.com/1200x/75/f9/58/75f9586b2c4c7bd4e51a539bc9ca585b.jpg"},
+    {"title": "Hridayam", "year": 2022, "language": "Malayalam", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/87/50/19/8750193fe468e0bdeb7a418ad5128422.jpg"}
+  ],
+  
+  "romantic": [
+    {"title": "Arjun Reddy", "year": 2017, "language": "Telugu", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/86/aa/55/86aa55eed95fb844f44c983b04f377e5.jpg"},
+    {"title": "Geetha Govindam", "year": 2018, "language": "Telugu", "genre": ["Romance", "Comedy"], "poster": "https://i.pinimg.com/1200x/af/9f/f1/af9ff1c35093a9365d3f928cbfb6ee42.jpg"},
+    {"title": "Yeh Jawaani Hai Deewani", "year": 2013, "language": "Hindi", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/43/16/e6/4316e6759f48d99db1d53daee945c3ad.jpg"},
+    {"title": "Aashiqui 2", "year": 2013, "language": "Hindi", "genre": ["Romance", "Musical"], "poster": "https://i.pinimg.com/1200x/40/e9/01/40e901b85a2408f7bca518ec191ed7ac.jpg"},
+    {"title": "Majili", "year": 2019, "language": "Telugu", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/89/73/62/8973621416d6b90b99c0b1a67317a201.jpg"},
+    {"title": "Love Today", "year": 2022, "language": "Tamil", "genre": ["Romance", "Comedy"], "poster": "https://i0.wp.com/constantscribbles.wordpress.com/wp-content/uploads/2022/12/love-today.jpg?resize=1200%2C675&ssl=1"}
+  ],
+  
+  "angry": [
+    {"title": "Pushpa: The Rise", "year": 2021, "language": "Telugu", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/1200x/34/53/ec/3453ec5d1869cb7412ad2c0ac2ce7258.jpg"},
+    {"title": "KGF: Chapter 2", "year": 2022, "language": "Kannada", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/1200x/72/c9/cb/72c9cbf25efa6d877844a736f0993910.jpg"},
+    {"title": "RRR", "year": 2022, "language": "Telugu", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/736x/cb/ad/a6/cbada6b4842bcfb9b3936b6f1a8bfb9c.jpg"},
+    {"title": "War", "year": 2019, "language": "Hindi", "genre": ["Action", "Thriller"], "poster": "https://i.pinimg.com/1200x/5c/f9/62/5cf962af65a79916cdcd2104e0eb8a49.jpg"},
+    {"title": "Baahubali 2", "year": 2017, "language": "Telugu", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/736x/46/6f/1f/466f1f61310dda36827ca9084eba61c4.jpg"},
+    {"title": "Singham", "year": 2011, "language": "Hindi", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/736x/c6/45/62/c64562abae68c44a165907a6870764a9.jpg"}
+  ],
+  
+  "relaxed": [
+    {"title": "Godavari", "year": 2006, "language": "Telugu", "genre": ["Romance", "Drama"], "poster": "https://i.pinimg.com/1200x/65/c2/3f/65c23f8defa2e8841560c7568c1555e4.jpg"},
+    {"title": "Swades", "year": 2004, "language": "Hindi", "genre": ["Drama", "Musical"], "poster": "https://i.pinimg.com/736x/cd/17/32/cd1732dbd39a91232ed9747e91c34793.jpg"},
+    {"title": "Manam", "year": 2014, "language": "Telugu", "genre": ["Drama", "Fantasy"], "poster": "https://img.airtel.tv/unsafe/fit-in/1600x0/filters:format(webp)/https://xstreamcp-assets-msp.streamready.in/assets/SUNNXT/MOVIE/6620f00b2653f96ff4c82cb1/images/1920x1080_Manam_7597_aa303dbf-f0e2-442f-b42d-056d6718cc52.jpg?o=production"},
+    {"title": "Zindagi Na Milegi Dobara", "year": 2011, "language": "Hindi", "genre": ["Drama", "Comedy"], "poster": "https://www.thestatesman.com/wp-content/uploads/2024/06/Zindagi-Na-Milegi-Dobara.jpg"},
+    {"title": "Mahanati", "year": 2018, "language": "Telugu", "genre": ["Biography", "Drama"], "poster": "https://i.pinimg.com/1200x/8b/2e/84/8b2e8434f0c986fb916b0b573879a524.jpg"},
+    {"title": "Barfi!", "year": 2012, "language": "Hindi", "genre": ["Comedy", "Drama"], "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMJKMaEFhPj4o455hY4Mey9atBz2_IwshDTw&s"}
+  ],
+  
+  "excited": [
+    {"title": "Eega", "year": 2012, "language": "Telugu", "genre": ["Fantasy", "Action"], "poster": "https://i.pinimg.com/1200x/e7/5e/94/e75e94b6022f828866ab6f506fb3e7ad.jpg"},
+    {"title": "Dangal", "year": 2016, "language": "Hindi", "genre": ["Biography", "Sports"], "poster": "https://i.pinimg.com/1200x/d6/a8/d5/d6a8d5ae8f73c4437c711eb905f42587.jpg"},
+    {"title": "Sarrainodu", "year": 2016, "language": "Telugu", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/1200x/4a/42/37/4a4237878272e34c8d49089aad213835.jpg"},
+    {"title": "Dhruva", "year": 2016, "language": "Telugu", "genre": ["Action", "Thriller"], "poster": "https://i.pinimg.com/1200x/3e/85/9a/3e859a629574c6fa358b30288009e900.jpg"},
+    {"title": "M.S. Dhoni: The Untold Story", "year": 2016, "language": "Hindi", "genre": ["Biography", "Sports"], "poster": "https://i.pinimg.com/1200x/c1/a4/85/c1a4851287bf0d66d9ee0c8f8ad535e2.jpg"},
+    {"title": "Athadu", "year": 2005, "language": "Telugu", "genre": ["Action", "Thriller"], "poster": "https://i.pinimg.com/1200x/b2/9d/d4/b29dd4ba478f2930320dbaa32a8835b0.jpg"}
+  ],
+  
+  "motivational": [
+    {"title": "Shyam Singha Roy", "year": 2021, "language": "Telugu", "genre": ["Drama", "Fantasy"], "poster": "https://i.pinimg.com/1200x/67/a5/b0/67a5b0edc71cb9a4585d8406a4eef37a.jpg"},
+    {"title": "Guru", "year": 2007, "language": "Hindi", "genre": ["Biography", "Drama"], "poster": "https://i.pinimg.com/1200x/50/89/c7/5089c7dd5f641905e6ae7c354c15f195.jpg"},
+    {"title": "Yevade Subramanyam", "year": 2010, "language": "Tamil", "genre": ["Adventure", "Drama"], "poster": "https://i.pinimg.com/736x/55/21/01/552101ed7a280d7803f81b1bdfdb0c09.jpg"},
+    {"title": "Chhichhore", "year": 2015, "language": "Telugu", "genre": ["Comedy", "Drama"], "poster": "https://i.pinimg.com/736x/0c/b9/67/0cb967780f88c71fb6bff594c4940a10.jpg"}
+  ],
+  
+  "adventurous": [
+    {"title": "Magadheera", "year": 2009, "language": "Telugu", "genre": ["Action", "Fantasy"], "poster": "https://i.pinimg.com/1200x/25/e3/3b/25e33bf9e4383aef955925021b07a624.jpg"},
+    {"title": "Bangalore Days", "year": 2014, "language": "Malayalam", "genre": ["Drama", "Comedy"], "poster": "https://i.pinimg.com/1200x/54/1d/e7/541de74dce1ab943599a3bf2b7f08154.jpg"},
+    {"title": "Hanuman", "year": 2022, "language": "Telugu", "genre": ["Fantasy", "Thriller"], "poster": "https://i.pinimg.com/736x/10/19/87/10198727d408fa1c4033386d75787369.jpg"},
+    {"title": "Kantara", "year": 2022, "language": "Kannada", "genre": ["Action", "Drama"], "poster": "https://i.pinimg.com/1200x/78/c9/2f/78c92f4823439c0b9a52db44a52001d9.jpg"},
+    {"title": "Karthikeya 2", "year": 2022, "language": "Telugu", "genre": ["Action", "Mystery", "Thriller", "Fantasy"], "poster": "https://beyondbollywood.home.blog/wp-content/uploads/2022/08/karthikeya-2-poster.jpg"}
+  ]
+}

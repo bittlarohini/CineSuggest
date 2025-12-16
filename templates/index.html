@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Movies - Telugu & Hindi Movie Recommender</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-film text-orange"></i>
+                <span class="logo-text">CineSuggest</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#moods" class="nav-link">Moods</a>
+                <a href="#movies" class="nav-link">All Movies</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            
+            <h2 class="hero-title text-blue">
+                <span class="text-orange">Stunning Recommendations </span><span class="text-white">based on your current mood</span>
+            </h2>
+            
+            <!-- Mood Selection -->
+            <div class="mood-selection-container">
+                <h5 class="section-title text-white">
+                    <i class="fas fa-heart text-orange"></i> How are you feeling today?
+                </h5>
+                <div id="moodButtons" class="mood-buttons">
+                    <!-- Mood buttons will be loaded here by JavaScript -->
+                </div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search movies by title, genre, or language..." class="search-input">
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations-section" style="display: none;">
+        <div class="section-header">
+            <h2 class="section-title text-orange">
+                <i class="fas fa-star"></i> 
+                <span id="moodTitle">Recommended Movies</span>
+            </h2>
+            <button id="backToMoods" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Moods
+            </button>
+        </div>
+        <div id="recommendationsContainer" class="movies-grid">
+            <!-- Movies will be loaded here -->
+        </div>
+    </section>
+
+    <!-- All Movies Section -->
+    <section id="movies" class="all-movies-section">
+        <div class="section-header">
+            <h2 class="section-title text-green">
+                <i class="fas fa-video"></i> All Movies Collection
+            </h2>
+            <p class="section-subtitle text-blue">Browse through our complete collection of Telugu and Hindi movies</p>
+        </div>
+        <div id="allMoviesContainer" class="movies-grid">
+            <!-- All movies will be loaded here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2 class="section-title text-white">
+                <i class="fas fa-info-circle text-orange"></i> About CineSuggest
+            </h2>
+            <div class="about-cards">
+                <div class="about-card">
+                    <i class="fas fa-brain text-green"></i>
+                    <h3 class="text-blue">Mood-Based</h3>
+                    <p class="text-white">Our AI analyzes your current mood and suggests the perfect movie match from our Telugu and Hindi collection.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-bolt text-orange"></i>
+                    <h3 class="text-blue">Fast & Accurate</h3>
+                    <p class="text-white">Get instant recommendations from our curated database of 45+ critically acclaimed movies.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-palette text-green"></i>
+                    <h3 class="text-blue">Beautiful UI</h3>
+                    <p class="text-white">Experience stunning dark theme with carefully selected color palette for optimal viewing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="text-orange">MoodMovies</h3>
+                <p class="text-white">Your personal Telugu & Hindi movie recommendation system</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="text-green">Quick Links</h3>
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#moods" class="footer-link">Moods</a>
+                <a href="#movies" class="footer-link">All Movies</a>
+            </div>
+            <div class="footer-section">
+                <h3 class="text-blue">Connect</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="text-white">© 2024 CineSuggest. All rights reserved. | Designed with <i class="fas fa-heart text-red"></i> for movie lovers</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
